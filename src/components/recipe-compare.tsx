@@ -60,7 +60,7 @@ export function RecipeCompare({ recipes, initialSlugs = [] }: RecipeCompareProps
           {completedRows.length ? <div className="difference-list">{completedRows.map((row) => <div className="difference-row" key={row.label}><h3>{row.label}</h3><div className="difference-values">{currentRecipes.map((recipe) => <div className="difference-value" key={recipe.slug}><span>{recipe.title}</span><strong>{row.value(recipe)}</strong></div>)}</div></div>)}</div> : <p className="no-differences">Choose at least two recipes with different settings to see what changes.</p>}
         </section>
       </>}
-      <p className="preview-disclaimer">Every preview in this comparison uses the same original vector scene and an approximate browser effect. None represents a photograph captured on an original G9.</p>
+      <p className="preview-disclaimer">Every preview in this comparison uses the same user-provided reference photograph and an approximate browser effect. None represents a photograph captured on an original G9.</p>
     </div>
   );
 }

@@ -8,7 +8,7 @@ G9 Film Lab is a Next.js App Router application. Recipe content and camera capab
 - Better Auth uses the Neon PostgreSQL database through the server-only `pg` pool. Email/password registration is restricted by the `admin_users` allowlist. Every admin page and write route checks both the session and the current allowlist membership.
 - Admin and migration connections are server-only. No Neon password, auth secret, or Blob write token is exposed through `NEXT_PUBLIC_` variables.
 - Vercel Blob stores admin-approved editorial photographs. Uploads are public assets; the interface requires permission confirmation and warns that GPS/EXIF metadata is not stripped automatically.
-- The common comparison image is original project-authored SVG vector artwork, explicitly labelled as an illustrative placeholder rather than a G9 photograph. Admin-approved photography remains a separate, attributed asset workflow.
+- The common comparison image is a user-provided reference photograph, explicitly labelled as an illustrative sample rather than a G9 photograph. Its use is recorded as authorized by the uploader; admin-approved and G9-tested photography remains a separate, attributed asset workflow.
 - Personal recipes, favourites, recent visits, wizard progress and Custom1–Custom4 plans live in IndexedDB on the user's device. Collection JSON is the backup and transfer mechanism; local records do not silently synchronize to a server.
 - The Studio preview uses local Canvas processing and is explicitly approximate. It does not change the camera recipe model or claim to reproduce Panasonic's JPEG pipeline.
 

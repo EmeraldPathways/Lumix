@@ -1,6 +1,6 @@
 import { G9RecipeSchema, type G9Recipe } from "./schema";
 
-const SAMPLE_SCENE = "/g9-sample-scene.svg";
+const SAMPLE_SCENE = "/g9-reference-photo.png";
 
 type SeedInput = Omit<G9Recipe, "id" | "preview" | "published" | "featured" | "sortOrder"> & {
   featured?: boolean;
@@ -13,10 +13,10 @@ function seedRecipe(input: SeedInput, sortOrder: number): G9Recipe {
     id: input.slug,
     preview: {
       src: SAMPLE_SCENE,
-      alt: `${input.title} illustrative preview on the same original vector scene; not a DC-G9 photograph.`,
+      alt: `${input.title} illustrative preview on the same user-provided reference photograph; not a DC-G9 photograph.`,
       authenticity: "illustrative",
-      photographer: "Original G9 Film Lab illustration",
-      licence: "Original project artwork",
+      photographer: "User-provided reference photograph",
+      licence: "Project use authorized by uploader",
     },
     published: true,
     featured: input.featured ?? false,

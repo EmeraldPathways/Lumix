@@ -20,11 +20,11 @@ const recipe = (overrides: Partial<G9Recipe> = {}): G9Recipe => ({
   suitability: ["portrait", "travel"],
   validationStatus: "experimental",
   preview: {
-    src: "/g9-sample-scene.svg",
-    alt: "Original vector illustration of a coastal street; not a DC-G9 photograph",
+    src: "/g9-reference-photo.png",
+    alt: "User-provided reference photograph; not a DC-G9 photograph",
     authenticity: "illustrative",
-    photographer: "Original G9 Film Lab illustration",
-    licence: "Original project artwork",
+    photographer: "User-provided reference photograph",
+    licence: "Project use authorized by uploader",
   },
   settings: {
     cameraModel: "DC-G9",

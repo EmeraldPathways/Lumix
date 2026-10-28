@@ -1,6 +1,6 @@
 # G9 Film Lab
 
-An independent recipe library and creative workspace for the original Panasonic Lumix DC-G9. Recipes use configurable Photo Styles and other documented camera controls; they do not install LUTs or camera apps. Every preview is illustrative unless a recipe has documented original-G9 test evidence.
+An independent recipe library and creative workspace for the original Panasonic Lumix DC-G9. Recipes use configurable Photo Styles and other documented camera controls; they do not install LUTs or camera apps. Every preview is illustrative unless a recipe has documented original-G9 test evidence. The shared sample uses a user-provided reference photograph so colour, highlight, shadow, and monochrome changes are easier to see.
 
 ## Development
 

@@ -22,7 +22,7 @@ import { PreviewWorkbench } from "./preview-workbench";
 const useCases: RecipeUseCase[] = ["portrait", "street", "landscape", "travel", "night"];
 const stylesByFirmware = (firmware: string) => getSupportedPhotoStyles(firmware);
 const monochromeStyles = ["Monochrome", "L.Monochrome", "L.Monochrome D"];
-const sampleAlt = "Original vector illustration of a coastal street; not a photograph captured with a Lumix G9.";
+const sampleAlt = "User-provided reference photograph; not a photograph captured with a Lumix G9.";
 
 function blankSettings(): G9RecipeSettings {
   return { cameraModel: "DC-G9", photoStyle: "Natural", contrast: 0, sharpness: 0, noiseReduction: 0, saturation: 0, whiteBalance: { mode: "AWB" } };
@@ -135,7 +135,7 @@ export function RecipeStudioEditor({ recipes, initialSlug }: { recipes: G9Recipe
     temperature: temperatureDescriptor(draft.settings),
     grainCharacter: draft.settings.grainEffect ?? "Off",
     firmwareMinimum: minimumFirmware(draft.settings),
-    preview: { ...draft.preview, src: "/g9-sample-scene.svg", alt: sampleAlt, authenticity: "illustrative", photographer: "Original G9 Film Lab illustration", licence: "Original project artwork" },
+    preview: { ...draft.preview, src: "/g9-reference-photo.png", alt: sampleAlt, authenticity: "illustrative", photographer: "User-provided reference photograph", licence: "Project use authorized by uploader" },
     published: false,
     featured: false,
     validationStatus: "experimental",

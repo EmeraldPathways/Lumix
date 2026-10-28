@@ -35,7 +35,7 @@ async function HomeContent() {
           </div>
           <div className="hero-visual">
             <RecipeArtwork recipe={comparison} priority className="hero-photo" />
-            <div className="hero-photo-caption"><span>01 / FIELD NOTES</span><span>Original vector scene · illustrative only</span></div>
+            <div className="hero-photo-caption"><span>01 / FIELD NOTES</span><span>Reference photograph · illustrative only</span></div>
             <div className="hero-stamp"><span>G9</span><small>FILM LAB<br />VOL. 01</small></div>
           </div>
           <div className="hero-index">01 — 25 EXPERIMENTAL LOOKS</div>

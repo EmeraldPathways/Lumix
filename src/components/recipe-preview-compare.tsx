@@ -27,7 +27,7 @@ export function RecipePreviewCompare({ recipe, compact = false }: { recipe: G9Re
         <span>Drag to compare</span>
         <input id={rangeId} aria-label="Move comparison divider" type="range" min="0" max="100" value={amount} onChange={(event) => setAmount(Number(event.currentTarget.value))} />
       </label>
-      <p className="preview-disclaimer">Same illustrative sample photograph on both sides. This browser effect is an approximation, not the G9 JPEG processing pipeline.</p>
+      <p className="preview-disclaimer">Same user-provided reference photograph on both sides. This browser effect is an approximation, not the G9 JPEG processing pipeline.</p>
     </div>
   );
 }

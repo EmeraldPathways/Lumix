@@ -140,7 +140,7 @@ function AdminRecipeEditor({ entry, template, onSaved, onMessage, onChanged }: {
       published: false,
       featured: false,
       validationStatus: "experimental" as const,
-      preview: { ...parsed.recipe.preview, src: "/g9-sample-scene.svg", authenticity: "illustrative" as const, alt: "Illustrative preview on the shared original vector scene; not a DC-G9 photograph." },
+      preview: { ...parsed.recipe.preview, src: "/g9-reference-photo.png", authenticity: "illustrative" as const, alt: "Illustrative preview on the shared user-provided reference photograph; not a DC-G9 photograph." },
       testEvidence: undefined,
       createdAt: now,
       updatedAt: now,
