@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative coastal street scene</title>
+  <desc id="desc">An original vector illustration of a quiet street leading down to a harbour at golden hour.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#9bb6b5"/><stop offset=".58" stop-color="#f2c99e"/><stop offset="1" stop-color="#e5a878"/></linearGradient>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#748d82"/><stop offset="1" stop-color="#415d59"/></linearGradient>
+    <linearGradient id="road" x2="0" y2="1"><stop stop-color="#888780"/><stop offset="1" stop-color="#484944"/></linearGradient>
+    <linearGradient id="sunlitWall" x2="1" y2=".4"><stop stop-color="#f2dfc1"/><stop offset="1" stop-color="#d6b38c"/></linearGradient>
+    <linearGradient id="shadeWall" x2="1" y2=".5"><stop stop-color="#7c7970"/><stop offset="1" stop-color="#4d514c"/></linearGradient>
+    <pattern id="waterLines" width="92" height="27" patternUnits="userSpaceOnUse"><path d="M8 12h48M42 23h38" stroke="#d1c09d" stroke-opacity=".38" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#sky)"/>
+  <circle cx="1160" cy="264" r="104" fill="#f8dfb8" opacity=".74"/>
+  <path d="M0 430 118 384l112 21 96-66 121 22 127-75 123 43 115-57 115 41 96-64 112 27 100-51 191 69v206H0Z" fill="#74786e" opacity=".72"/>
+  <path d="M0 477 170 425l110 28 122-52 146 40 127-36 118 38 102-27 149 48 116-36 126 37 150-22v160H0Z" fill="#5c6e64"/>
+  <path d="M0 557q176-30 333-8t312 1 334-6 327 9 230-4v257H0Z" fill="url(#sea)"/>
+  <path d="M0 557q176-30 333-8t312 1 334-6 327 9 230-4v257H0Z" fill="url(#waterLines)"/>
+  <path d="M0 722h450l196-112 219-28 172 40 171 100h328v302H0Z" fill="#d6c2a2"/>
+  <path d="m0 791 449-7 181-120 225-34 190 43 177 115 314 3v233H0Z" fill="url(#road)"/>
+  <path d="m0 778 442 2 193-123 220-32 186 43 178 111 317 2" fill="none" stroke="#eee1c9" stroke-width="14" opacity=".8"/>
+  <path d="M724 726h62l-22 65h-88zm-70 142h156l-19 66H621z" fill="#d9d0bd" opacity=".36"/>
+  <path d="M0 110h298v670L0 792Z" fill="url(#shadeWall)"/>
+  <path d="M36 137h225v636L36 778Z" fill="#b99b78"/>
+  <path d="M0 106h305v59H0Z" fill="#353b37"/>
+  <path d="M16 178h77v167H16zm105 0h86v167h-86zm-99 198h81v131H22zm103 0h91v131h-91z" fill="#34413f"/>
+  <path d="M29 188h52v146H29zm104 0h58v146h-58zM35 389h53v108H35zm103 0h60v108h-60z" fill="#d59b66" opacity=".72"/>
+  <path d="M0 536h246v30H0zm0 171 261-57v37L0 761z" fill="#393f3b"/>
+  <path d="M243 265h190v529l-190-12Z" fill="url(#sunlitWall)"/>
+  <path d="M223 247h225v41H223Z" fill="#764b3e"/>
+  <path d="M269 325h63v137h-63zm93 0h66v137h-66zm-90 187h73v128h-73zm103 0h75v128h-75z" fill="#725b4c"/>
+  <path d="M280 336h42v115h-42zm96 0h44v115h-44zm-94 186h52v109h-52zm103 0h55v109h-55z" fill="#96aaa0"/>
+  <path d="M265 471h176v15H265zm-1 154h179v15H264z" fill="#f6dfbd"/>
+  <path d="M1017 257h255v544l-255-18Z" fill="#d1b594"/>
+  <path d="M997 239h292v42H997Z" fill="#4d4943"/>
+  <path d="M1051 321h74v151h-74zm111 0h85v151h-85zm-97 193h91v135h-91zm120 0h89v135h-89z" fill="#48514c"/>
+  <path d="M1062 333h52v126h-52zm113 0h61v126h-61zm-98 192h66v109h-66zm119 0h66v109h-66z" fill="#c78d5f"/>
+  <path d="M1036 482h234v18h-234zm-3 151h240v17h-240z" fill="#ede0ca"/>
+  <path d="M1260 402h276v414l-276-14Z" fill="#e6d3b8"/>
+  <path d="M1244 382h292v38h-292Z" fill="#5c5149"/>
+  <path d="M1300 461h76v124h-76zm111 0h84v124h-84zm-95 164h83v111h-83zm116 0h88v111h-88z" fill="#4c5b56"/>
+  <path d="M1311 471h54v103h-54zm111 0h62v103h-62zm-95 165h60v89h-60zm116 0h66v89h-66z" fill="#d6a16e"/>
+  <path d="m0 754 255-54v81L0 846zm1273-30 263 8v76l-263-16z" fill="#e7d6bd"/>
+  <g fill="#415845"><path d="M68 602q-39-84 2-164 61 75 21 167zm67-10q-14-93 52-151 35 92-43 165zm-45-40q-68-58-49-145 78 54 61 142z"/><path d="M1386 581q-38-86 12-169 57 80 8 170zm64 13q-7-94 63-147 29 94-53 160zm-42-41q-65-62-41-147 75 58 54 145z"/></g>
+  <g fill="#bb7255"><circle cx="44" cy="700" r="13"/><circle cx="89" cy="691" r="10"/><circle cx="148" cy="672" r="12"/><circle cx="1397" cy="714" r="12"/><circle cx="1452" cy="716" r="9"/><circle cx="1503" cy="703" r="12"/></g>
+  <g fill="#f2d9b7" opacity=".65"><path d="M533 588h95v9h-95zm452 27h68v8h-68zm-538 47h57v8h-57zm630 3h79v8h-79z"/></g>
+  <rect width="1536" height="1024" fill="none" stroke="#f4f0e7" stroke-opacity=".25" stroke-width="18"/>
+</svg>
