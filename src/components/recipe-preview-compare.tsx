@@ -15,7 +15,7 @@ export function RecipePreviewCompare({ recipe, compact = false }: { recipe: G9Re
     <div className={`preview-compare${compact ? " preview-compare-compact" : ""}`}>
       <div className="comparison-image" style={style}>
         <Image src={recipe.preview.src} alt={recipe.preview.alt} fill sizes="(max-width: 760px) 95vw, 75vw" priority className="comparison-before" />
-        <div className="comparison-after" aria-hidden="true" style={{ clipPath: "inset(0 calc(100% - var(--reveal)) 0 0)" }}>
+        <div className="comparison-after" aria-hidden="true" style={{ clipPath: "inset(0 0 0 calc(100% - var(--reveal)))" }}>
           <Image src={recipe.preview.src} alt="" fill sizes="(max-width: 760px) 95vw, 75vw" className="comparison-processed" style={{ filter: treatment.filter }} />
           {treatment.grainOpacity > 0 && <span className="grain-texture" style={{ opacity: treatment.grainOpacity }} />}
         </div>

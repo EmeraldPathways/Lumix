@@ -7,7 +7,7 @@ import { FavoriteButton } from "./favorite-button";
 export function RecipeCard({ recipe }: { recipe: G9Recipe }) {
   return (
     <article className="recipe-card">
-      <div className="recipe-card-image"><Link href={`/recipes/${recipe.slug}`} aria-label={`Open ${recipe.title}`}><RecipeArtwork recipe={recipe} /></Link><FavoriteButton slug={recipe.slug} compact /></div>
+      <div className="recipe-card-image"><Link href={`/recipes/${recipe.slug}`} aria-label={`Open ${recipe.title}`}><RecipeArtwork recipe={recipe} splitEffect /></Link><FavoriteButton slug={recipe.slug} compact /></div>
       <div className="recipe-card-body">
         <div className="card-meta"><span>{recipe.colorMode === "monochrome" ? "Monochrome" : "Colour"}</span><span>{recipe.temperature}</span><span className="status-dot">Experimental</span></div>
         <h3><Link href={`/recipes/${recipe.slug}`}>{recipe.title}</Link></h3>

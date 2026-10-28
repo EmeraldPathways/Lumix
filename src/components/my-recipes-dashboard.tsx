@@ -40,7 +40,7 @@ function PersonalRecipeCard({ recipe, onRefresh, onMessage }: { recipe: G9Recipe
     } catch { onMessage("Could not delete this recipe."); }
   }
 
-  return <article className="personal-recipe-card"><Link className="personal-recipe-image" href={`/studio?recipe=${recipe.slug}`}><RecipeArtwork recipe={recipe} /></Link><div className="personal-recipe-content"><span className="eyebrow">{recipe.colorMode === "colour" ? "Colour" : "Monochrome"} · Local</span><h3><Link href={`/studio?recipe=${recipe.slug}`}>{recipe.title}</Link></h3><p>{recipe.description}</p><div className="personal-recipe-actions"><Link href={`/studio?recipe=${recipe.slug}`}>Edit <SlidersHorizontal size={13} /></Link><button type="button" onClick={duplicate}>Duplicate</button><button type="button" className="danger-text" onClick={remove}><Trash2 size={13} /> Delete</button></div></div></article>;
+  return <article className="personal-recipe-card"><Link className="personal-recipe-image" href={`/studio?recipe=${recipe.slug}`}><RecipeArtwork recipe={recipe} splitEffect /></Link><div className="personal-recipe-content"><span className="eyebrow">{recipe.colorMode === "colour" ? "Colour" : "Monochrome"} · Local</span><h3><Link href={`/studio?recipe=${recipe.slug}`}>{recipe.title}</Link></h3><p>{recipe.description}</p><div className="personal-recipe-actions"><Link href={`/studio?recipe=${recipe.slug}`}>Edit <SlidersHorizontal size={13} /></Link><button type="button" onClick={duplicate}>Duplicate</button><button type="button" className="danger-text" onClick={remove}><Trash2 size={13} /> Delete</button></div></div></article>;
 }
 
 export function MyRecipesDashboard({ publishedRecipes }: { publishedRecipes: G9Recipe[] }) {

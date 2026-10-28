@@ -82,7 +82,7 @@ export function PreviewWorkbench({ settings }: { settings: G9RecipeSettings }) {
       <div className="studio-comparison" style={{ "--reveal": `${divider}%` } as React.CSSProperties}>
         <div className="studio-image-frame">
           <Image src={sourceUrl} alt={file ? "Your uploaded JPEG, original view" : "User-provided reference photograph, original view"} fill unoptimized sizes="(max-width: 760px) 95vw, 65vw" className="studio-source-image" />
-          <div className="studio-preview-overlay" style={{ clipPath: "inset(0 calc(100% - var(--reveal)) 0 0)" }}><canvas ref={canvasRef} aria-label="Approximate recipe preview rendered locally in this browser" className="studio-preview-canvas" /></div>
+          <div className="studio-preview-overlay" style={{ clipPath: "inset(0 0 0 calc(100% - var(--reveal)))" }}><canvas ref={canvasRef} aria-label="Approximate recipe preview rendered locally in this browser" className="studio-preview-canvas" /></div>
           <span className="comparison-label before-label">Original</span><span className="comparison-label after-label">Approximate G9 direction</span>
           <span className="comparison-divider" aria-hidden="true" style={{ left: `${divider}%` }}><span /></span>
         </div>
