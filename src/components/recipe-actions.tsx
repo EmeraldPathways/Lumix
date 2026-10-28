@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Copy, Download, Printer, Share2, SlidersHorizontal } from "lucide-react";
+import { formatSigned } from "@/lib/format";
 import type { G9Recipe } from "@/lib/recipes/schema";
 import { FavoriteButton } from "./favorite-button";
 import { recordRecentlyViewed } from "@/lib/local-library";
@@ -28,7 +29,7 @@ export function RecipeActions({ recipe }: { recipe: G9Recipe }) {
       ...(settings.grainEffect ? [`Grain Effect: ${settings.grainEffect}`] : []),
       ...(settings.highlightShadow ? [`Highlight Shadow: ${settings.highlightShadow}`] : []),
       `White Balance: ${settings.whiteBalance.mode}${settings.whiteBalance.kelvin ? `, ${settings.whiteBalance.kelvin} K` : ""}`,
-      ...(settings.suggestedExposureCompensation === undefined ? [] : [`Suggested exposure compensation: ${settings.suggestedExposureCompensation > 0 ? "+" : ""}${settings.suggestedExposureCompensation} EV`]),
+      ...(settings.suggestedExposureCompensation === undefined ? [] : [`Suggested exposure compensation: ${formatSigned(settings.suggestedExposureCompensation)} EV`]),
     ].join("\n");
     try {
       await navigator.clipboard.writeText(content);

@@ -3,6 +3,7 @@
 import { useCallback, useState, useSyncExternalStore } from "react";
 import { ArrowLeft, ArrowRight, Check, CircleAlert, RotateCcw } from "lucide-react";
 import { firmwareAtLeast } from "@/lib/camera/g9";
+import { formatSigned } from "@/lib/format";
 import type { G9Recipe } from "@/lib/recipes/schema";
 
 type Quality = "JPEG" | "RAW+JPEG";
@@ -164,7 +165,7 @@ export function G9SetupWizard({ recipe }: { recipe?: G9Recipe }) {
           </>}
           {step === 9 && <>
             <p className="eyebrow">Shooting guidance</p><h2>Keep optional settings optional.</h2><p>{recipe?.shootingNotes ?? "Follow the recipe’s shooting notes and evaluate the first JPEG in the light you plan to use."}</p>
-            {recipe?.settings.suggestedExposureCompensation !== undefined && <div className="wizard-setting-highlight"><span>OPTIONAL EXPOSURE SUGGESTION</span><strong>{recipe.settings.suggestedExposureCompensation > 0 ? "+" : ""}{recipe.settings.suggestedExposureCompensation} EV</strong></div>}
+            {recipe?.settings.suggestedExposureCompensation !== undefined && <div className="wizard-setting-highlight"><span>OPTIONAL EXPOSURE SUGGESTION</span><strong>{formatSigned(recipe.settings.suggestedExposureCompensation)} EV</strong></div>}
             <p className="supporting-note">Exposure compensation is a shooting suggestion, not part of the Photo Style. i.Dynamic and other camera settings are not included unless a recipe explicitly lists them.</p>
           </>}
           {step === 10 && <>

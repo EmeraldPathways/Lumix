@@ -15,6 +15,7 @@ import {
 } from "@/lib/camera/g9";
 import { deletePersonalRecipe, getPersonalRecipe, getPersonalRecipes, savePersonalRecipe } from "@/lib/local-library";
 import { G9RecipeSchema, type G9Recipe, type RecipeCategory, type RecipeUseCase } from "@/lib/recipes/schema";
+import { formatSigned } from "@/lib/format";
 import { seedRecipes } from "@/lib/recipes/seed";
 import { PreviewWorkbench } from "./preview-workbench";
 
@@ -75,7 +76,6 @@ function minimumFirmware(settings: G9RecipeSettings) {
   return "1.0";
 }
 
-function signed(value: number) { return value > 0 ? `+${value}` : String(value); }
 function contrastDescriptor(value: number): G9Recipe["contrastCharacter"] { return value <= -2 ? "soft" : value >= 2 ? "high" : "medium"; }
 function saturationDescriptor(value: number): G9Recipe["saturationCharacter"] { return value <= -2 ? "muted" : value >= 2 ? "vivid" : "natural"; }
 function temperatureDescriptor(settings: G9RecipeSettings): G9Recipe["temperature"] {
@@ -312,7 +312,7 @@ export function RecipeStudioEditor({ recipes, initialSlug }: { recipes: G9Recipe
             if (control.kind === "range") {
               const settingName = control.id as "contrast" | "sharpness" | "noiseReduction" | "saturation" | "colorTone";
               const value = draft.settings[settingName] ?? 0;
-              return <label className="range-setting" key={control.id}><span><span>{control.label}</span><strong>{signed(value)}</strong></span><input aria-label={control.label} type="range" min={control.min} max={control.max} step={control.step} value={value} onChange={(event) => updateSettings({ [settingName]: Number(event.currentTarget.value) })} /><small>−5 <span>0</span> +5</small></label>;
+              return <label className="range-setting" key={control.id}><span><span>{control.label}</span><strong>{formatSigned(value)}</strong></span><input aria-label={control.label} type="range" min={control.min} max={control.max} step={control.step} value={value} onChange={(event) => updateSettings({ [settingName]: Number(event.currentTarget.value) })} /><small>−5 <span>0</span> +5</small></label>;
             }
             if (control.id === "filterEffect") return <label className="studio-field" key={control.id}><span>{control.label}</span><select aria-label={control.label} value={draft.settings.filterEffect ?? "Off"} onChange={(event) => updateSettings({ filterEffect: event.currentTarget.value as G9RecipeSettings["filterEffect"] })}>{control.options?.map((option) => <option key={option}>{option}</option>)}</select></label>;
             if (control.id === "grainEffect") return <label className="studio-field" key={control.id}><span>{control.label} · monochrome only</span><select aria-label={control.label} value={draft.settings.grainEffect ?? "Off"} onChange={(event) => updateSettings({ grainEffect: event.currentTarget.value === "Off" ? undefined : event.currentTarget.value as G9RecipeSettings["grainEffect"] })}>{control.options?.map((option) => <option key={option}>{option}</option>)}</select></label>;
@@ -327,7 +327,7 @@ export function RecipeStudioEditor({ recipes, initialSlug }: { recipes: G9Recipe
         }}>{!wbModes.includes(draft.settings.whiteBalance.mode) && <option value={draft.settings.whiteBalance.mode} disabled>{draft.settings.whiteBalance.mode} · firmware 2.0+</option>}{wbModes.map((mode) => <option value={mode} key={mode}>{mode}</option>)}</select></label>
         {draft.settings.whiteBalance.mode === "Color Temperature" && <label className="studio-field"><span>Kelvin</span><input type="number" min="2500" max="10000" step="100" value={draft.settings.whiteBalance.kelvin ?? 5600} onChange={(event) => updateSettings({ whiteBalance: { ...draft.settings.whiteBalance, mode: "Color Temperature", kelvin: Number(event.currentTarget.value) } })} /></label>}
         <div className="studio-wb-note"><span>WB fine shift</span><strong>Centre · 0 / 0</strong><small>Recipe data uses centred A/B and G/M axes. The numeric camera range is not documented here.</small></div>
-        <label className="range-setting"><span><span>Suggested exposure</span><strong>{draft.settings.suggestedExposureCompensation === undefined ? "—" : `${signed(draft.settings.suggestedExposureCompensation)} EV`}</strong></span><input aria-label="Suggested exposure compensation" type="range" min="-3" max="3" step="0.333333" value={draft.settings.suggestedExposureCompensation ?? 0} onChange={(event) => updateSettings({ suggestedExposureCompensation: Number(event.currentTarget.value) })} /><small>Optional shooting guidance</small></label>
+        <label className="range-setting"><span><span>Suggested exposure</span><strong>{draft.settings.suggestedExposureCompensation === undefined ? "—" : `${formatSigned(draft.settings.suggestedExposureCompensation)} EV`}</strong></span><input aria-label="Suggested exposure compensation" type="range" min="-3" max="3" step="0.333333" value={draft.settings.suggestedExposureCompensation ?? 0} onChange={(event) => updateSettings({ suggestedExposureCompensation: Number(event.currentTarget.value) })} /><small>Optional shooting guidance</small></label>
           </div>
         </details>
       </section>
