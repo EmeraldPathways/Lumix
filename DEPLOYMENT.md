@@ -35,5 +35,9 @@ No values are prefixed `NEXT_PUBLIC_` unless they are intended to be public.
 
 ## Current external setup status
 
-The app code and migrations do not contain live Neon, Better Auth or Blob credentials. A successful local build is not a deployed app. Record the actual Vercel deployment URL, tested commit and database migration/seed result after service access is configured.
+The public app is deployed at [https://lumix-g9-film-lab.vercel.app](https://lumix-g9-film-lab.vercel.app), connected to `EmeraldPathways/Lumix`, with production builds from `main`. The production deployment verified on 2026-10-28 is commit `b89477f3c92a68ef5ca1c58eb495fd058ef0dd5f`.
+
+The Vercel runtime currently has no Neon or Better Auth credentials. The public app therefore serves its bundled collection of 25 experimental recipes. `/admin` reports that `DATABASE_URL`, `BETTER_AUTH_SECRET` and `ADMIN_EMAILS` are not configured. Neon migrations and the seed command have not been run against a live database; cloud-backed recipe persistence, administrator sign-in and editorial writes are not active. User-created recipes and favourites remain local to each browser. Add the required server-side variables above, run migrations and seed once, and redeploy before treating admin or database persistence as live. Configure `BLOB_READ_WRITE_TOKEN` only when approved editorial uploads are needed.
+
+Vercel preview deployments remain behind SSO; the production alias is publicly reachable. The project is linked to GitHub `main` for automatic deployments.
 
